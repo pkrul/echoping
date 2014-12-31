@@ -1,0 +1,8 @@
+dnl $Id: configure-common.ac 401 2007-04-05 12:26:38Z bortz $
+AC_INIT(echoping, 6.1-BETA, bortz@users.sourceforge.net)
+AC_CANONICAL_HOST
+AC_PROG_CC(cc gcc)
+AC_LIBTOOL_DLOPEN
+AC_PROG_LIBTOOL
+
+
