@@ -135,6 +135,14 @@ dnl Checks for programs.
 AC_PROG_CC
 AC_PROG_INSTALL
 
+test_gcc_flag() {
+  AC_LANG_CONFTEST([AC_LANG_PROGRAM([int main() {}])])
+  $CC -c conftest.c $CFLAGS $@ > /dev/null 2> /dev/null
+  ret=$?
+  rm -f conftest.o
+  return $ret
+}
+
 dnl Checks for libraries.
 
 dnl Checks for header files.

@@ -18,7 +18,7 @@ dnl http://bugs.debian.org/254089
 	[ saved_LIBS="$LIBS"
 	LIBS="$LIBS -lresolv"
 	AC_MSG_CHECKING(for res_mkquery in -lresolv again)
-	AC_LINK_IFELSE([[
+	AC_LINK_IFELSE([AC_LANG_PROGRAM([[
 #include <resolv.h>
 int main()
 {
@@ -27,7 +27,7 @@ int main()
 }]],
 	LIBS="$saved_LIBS -lresolv"; AC_MSG_RESULT(yes),
 	LIBS="$saved_LIBS"; AC_MSG_RESULT(no)
-        [AC_MSG_WARN([No DNS resolver development environment found, not building this plugin]) && DNS_BUILD=0])])])])
+        [AC_MSG_WARN([No DNS resolver development environment found, not building this plugin]) && DNS_BUILD=0])])])])])
 fi
 
 AC_MSG_CHECKING([_res ])
